@@ -44,6 +44,10 @@ export const Form = styled.form(
       flex-direction: column;
       margin: 1em 0;
 
+      &.flex {
+        display: flex;
+      }
+
       label {
         margin-bottom: 0.5em;
       }
@@ -81,9 +85,16 @@ export const TextLink = styled.a(
     text-decoration: none;
     color: ${colors.white};
     cursor: pointer;
-
+    display: inline;
     &:hover {
       color: orange;
     }
+  `
+)
+
+export const Row = styled.div(
+  ({ column }) => css`
+    display: flex;
+    justify-content: space-between;
   `
 )

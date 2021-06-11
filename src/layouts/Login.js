@@ -5,11 +5,12 @@ import {
   Box,
   Form,
   Button,
-  TextLink
+  TextLink,
+  Row
 } from '../components/styledComponents'
 import { useInput } from '../hooks/useInput'
 
-const LoginForm = ({ loginUser, setResetPassword }) => {
+const LoginForm = ({ setResetPassword }) => {
   const {
     value: username,
     bind: bindUsername,
@@ -21,31 +22,43 @@ const LoginForm = ({ loginUser, setResetPassword }) => {
     reset: resetPassword
   } = useInput('')
 
+  function loginUser (e) {
+    e.preventDefault()
+    alert(`user with username of ${username} and password ${password} to login`)
+  }
+
   return (
     <Form marginTop={2.5} onSubmit={loginUser}>
       <div className='inputGroup'>
         <label htmlFor='username'>Username</label>
-        <input type='text' placeholder='jeremiah' />
+        <input type='text' placeholder='jeremiah' {...bindUsername} />
       </div>
       <div className='inputGroup'>
         <label htmlFor='password'>Password</label>
-        <input type='password' placeholder='*******' />
+        <input type='password' placeholder='*******' {...bindPassword} />
       </div>
       <div className='inputGroup'>
         <Button>Login Now</Button>
       </div>
-      <div className='inputGroup'>
+      <Row>
         {/* <TextLink href='/forgot-password'>Forget your password?</TextLink> */}
         <TextLink onClick={() => setResetPassword(true)}>
-          Forget your password?
+          Forget password?
         </TextLink>
-      </div>
+
+        <TextLink onClick={() => setResetPassword(true)}>Register Now</TextLink>
+      </Row>
     </Form>
   )
 }
 
-const PasswordResetForm = ({ passwordReset, setResetPassword }) => {
-  const [email, setPassword] = useState()
+const PasswordResetForm = ({ setResetPassword }) => {
+  const { value: email, bind: bindEmail, reset: resetEmail } = useInput('')
+
+  function passwordReset (e) {
+    e.preventDefault()
+    alert(`Resetting password for ${email}`)
+  }
 
   return (
     <Form marginTop={2.5} onSubmit={passwordReset}>
@@ -65,31 +78,14 @@ const PasswordResetForm = ({ passwordReset, setResetPassword }) => {
 
 const Login = () => {
   const [resetPassword, setResetPassword] = useState(false)
-
-  function loginUser (e) {
-    e.preventDefault()
-    alert('To login')
-  }
-
-  function passwordReset (e) {
-    e.preventDefault()
-    alert('Resetting Password')
-  }
-
   return (
     <BasicPage centered full>
       <Box>
         <Title>Login Page</Title>
         {resetPassword ? (
-          <PasswordResetForm
-            passwordReset={passwordReset}
-            setResetPassword={setResetPassword}
-          />
+          <PasswordResetForm setResetPassword={setResetPassword} />
         ) : (
-          <LoginForm
-            loginUser={loginUser}
-            setResetPassword={setResetPassword}
-          />
+          <LoginForm setResetPassword={setResetPassword} />
         )}
       </Box>
     </BasicPage>
