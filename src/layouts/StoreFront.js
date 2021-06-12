@@ -1,11 +1,18 @@
-import { BasicPage, PageContainer, Title } from '../components/styledComponents'
+import {
+  BasicPage,
+  PageContainer,
+  Title,
+  StoreContainer,
+  PageTitle
+} from '../components/styledComponents'
+import { colors, fonts } from '../components/constants'
 
 const StoreFront = () => {
   return (
-    <BasicPage>
-      <PageContainer>
-        <Title>Landing Page</Title>
-      </PageContainer>
+    <BasicPage bg={colors.lightBlack}>
+      <StoreContainer>
+        <PageTitle>Stores</PageTitle>
+      </StoreContainer>
     </BasicPage>
   )
 }

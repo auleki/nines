@@ -4,6 +4,7 @@ import {
   Paragraph
 } from '../components/styledComponents'
 import { icons } from '../components/constants'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -15,9 +16,15 @@ const Navbar = () => {
         </h2>
       </div>
       <div className='navlinks'>
-        <NavlinkStyle>Home</NavlinkStyle>
-        <NavlinkStyle>Storefront</NavlinkStyle>
-        <NavlinkStyle>Login/Register</NavlinkStyle>
+        <Link to='/'>
+          <NavlinkStyle>Home</NavlinkStyle>
+        </Link>
+        <Link to='/store'>
+          <NavlinkStyle>Storefront</NavlinkStyle>
+        </Link>
+        <Link to='/login'>
+          <NavlinkStyle>Login/Register</NavlinkStyle>
+        </Link>
       </div>
       <div className='userActions'>
         <p>CART</p>

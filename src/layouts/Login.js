@@ -8,7 +8,7 @@ import {
   TextLink,
   Row
 } from '../components/styledComponents'
-import { colors } from '../components/constants'
+import { colors, fonts } from '../components/constants'
 import { useInput } from '../hooks/useInput'
 
 const LoginForm = ({ setResetPassword }) => {
@@ -82,7 +82,9 @@ const Login = () => {
   return (
     <BasicPage centered full bg={colors.lightBlack}>
       <Box>
-        <Title>Login Page</Title>
+        <Title font={fonts.charmonman}>
+          {resetPassword ? 'Reset Password' : 'Login Page'}
+        </Title>
         {resetPassword ? (
           <PasswordResetForm setResetPassword={setResetPassword} />
         ) : (

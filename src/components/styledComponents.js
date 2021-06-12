@@ -30,6 +30,10 @@ export const HeaderStyle = styled.div(
     gap: 1em;
     color: ${colors.bkack};
     padding: 0 0.5em;
+
+    a {
+      text-decoration: none;
+    }
   `
 )
 
@@ -37,6 +41,14 @@ export const PageContainer = styled.div(
   ({ bg, full, bgImage }) => css`
     /* background-image: url(''); */
     height: ${full ? '100vh' : '100%'};
+  `
+)
+
+export const StoreContainer = styled.div(
+  ({ size }) => css`
+    padding: 6em 1em 0 1em;
+    background: ${colors.black};
+    height: 100vh;
   `
 )
 
@@ -64,6 +76,15 @@ export const Title = styled.h1(
   `
 )
 
+export const PageTitle = styled.h2(
+  ({ font, size, color }) => css`
+    color: ${colors.altWhite};
+    font-family: ${fonts.spaceMono};
+    border-bottom: ${numerics.border}em solid ${colors.midGreen};
+    display: inline;
+  `
+)
+
 export const Paragraph = styled.p(
   ({ size, font, color, bgColor, paddingX, paddingY }) => css`
     color: ${color || colors.altWhite};
@@ -72,6 +93,12 @@ export const Paragraph = styled.p(
     padding: ${paddingY || 0}em ${paddingX || 0}em;
     font-family: ${font || 'inherit'};
     border-radius: 0.4em;
+  `
+)
+
+export const SpanText = styled.span(
+  ({ color, size }) => css`
+    color: ${color || 'inherit'};
   `
 )
 
@@ -129,8 +156,9 @@ export const Button = styled.button(
     cursor: pointer;
     font-family: ${fonts.spaceMono};
     display: inline;
-    color: ${textColor || colors.black};
-    border: ${numerics.border}em solid transparent;
+    color: ${textColor || colors.brown};
+    border-radius: ${numerics.border}em;
+    /* border: ${numerics.border}em solid transparent; */
     transition: 250ms ease-in;
 
     &:hover,
@@ -138,7 +166,7 @@ export const Button = styled.button(
       background: ${colors.brown};
       outline: 0;
       color: ${colors.black};
-      border: ${numerics.border} solid turquoise;
+      /* border: ${numerics.border} solid turquoise; */
     }
   `
 )
@@ -182,7 +210,7 @@ export const NavbarStyle = styled.nav(
     height: 4.5em;
     width: 100%;
     display: flex;
-    position: absolute;
+    position: fixed;
     align-items: center;
     top: 0;
     /* font-family: ${fonts.charmonman}; */
@@ -190,6 +218,7 @@ export const NavbarStyle = styled.nav(
     color: ${colors.altWhite};
     padding: 1em;
     background: ${colors.lightBlack};
+    /* background: transparent; */
     font-size: 1em;
 
     .logo {
