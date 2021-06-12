@@ -4,10 +4,12 @@ import {
   LandingContainer,
   Title,
   Paragraph,
-  Button
+  Button,
+  SpanText
 } from '../components/styledComponents'
 import WPLanding from '../assets/landing-bg.jpg'
 import { fonts, colors } from '../components/constants'
+import { Link } from 'react-router-dom'
 
 const Landing = () => {
   return (
@@ -15,7 +17,8 @@ const Landing = () => {
       <LandingContainer full bgImage={WPLanding}>
         <HeaderStyle>
           <Title font={fonts.spaceMono} size={4}>
-            Get all the high you need
+            Get all the <SpanText color={colors.sparkGreen}>high</SpanText> you
+            need
           </Title>
           <Paragraph
             size={1.5}
@@ -27,7 +30,9 @@ const Landing = () => {
             We are your most efficient and reliable supplier.
           </Paragraph>
           <div>
-            <Button textColor={colors.brown}>Go Shopping</Button>
+            <Link to='/store'>
+              <Button textColor={colors.brown}>Go Shopping</Button>
+            </Link>
           </div>
         </HeaderStyle>
       </LandingContainer>
