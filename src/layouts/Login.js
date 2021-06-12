@@ -11,7 +11,57 @@ import {
 import { colors, fonts } from '../components/constants'
 import { useInput } from '../hooks/useInput'
 
-const LoginForm = ({ setResetPassword }) => {
+const RegisterForm = ({ setToRegister, setResetPassword }) => {
+  const {
+    value: username,
+    bind: bindUsername,
+    reset: resetUsername
+  } = useInput('')
+  const {
+    value: password,
+    bind: bindPassword,
+    reset: resetPassword
+  } = useInput('')
+
+  function registerUser (e, user) {
+    e.preventDefault()
+    alert('Registering User...')
+  }
+
+  return (
+    <Form marginTop={2.5} onSubmit={registerUser}>
+      <div className='inputGroup'>
+        <label htmlFor='username'>Username</label>
+        <input type='text' placeholder='jeremiah' {...bindUsername} />
+      </div>
+      <div className='inputGroup'>
+        <label htmlFor='email'>Email</label>
+        <input type='email' placeholder='jeremiah' {...bindUsername} />
+      </div>
+      <div className='inputGroup'>
+        <label htmlFor='password'>Password</label>
+        <input type='password' placeholder='*******' {...bindPassword} />
+      </div>
+      {/* <div className='inputGroup'>
+        <label htmlFor='confirmPassword'>Confirm Password</label>
+        <input type='password' placeholder='*******' {...bindPassword} />
+      </div> */}
+      <div className='inputGroup'>
+        <Button>Register Now</Button>
+      </div>
+      <Row>
+        {/* <TextLink href='/forgot-password'>Forget your password?</TextLink> */}
+        <TextLink onClick={() => setResetPassword(true)}>
+          Forget password?
+        </TextLink>
+
+        <TextLink onClick={() => setToRegister(false)}>Login now</TextLink>
+      </Row>
+    </Form>
+  )
+}
+
+const LoginForm = ({ setResetPassword, setToRegister }) => {
   const {
     value: username,
     bind: bindUsername,
@@ -47,7 +97,7 @@ const LoginForm = ({ setResetPassword }) => {
           Forget password?
         </TextLink>
 
-        <TextLink onClick={() => setResetPassword(true)}>Register now</TextLink>
+        <TextLink onClick={() => setToRegister(true)}>Register now</TextLink>
       </Row>
     </Form>
   )
@@ -79,6 +129,7 @@ const PasswordResetForm = ({ setResetPassword }) => {
 
 const Login = () => {
   const [resetPassword, setResetPassword] = useState(false)
+  const [toRegister, setToRegister] = useState(false)
   return (
     <BasicPage centered full bg={colors.lightBlack}>
       <Box>
@@ -87,8 +138,16 @@ const Login = () => {
         </Title>
         {resetPassword ? (
           <PasswordResetForm setResetPassword={setResetPassword} />
+        ) : toRegister ? (
+          <RegisterForm
+            setToRegister={setToRegister}
+            setResetPassword={setResetPassword}
+          />
         ) : (
-          <LoginForm setResetPassword={setResetPassword} />
+          <LoginForm
+            setToRegister={setToRegister}
+            setResetPassword={setResetPassword}
+          />
         )}
       </Box>
     </BasicPage>

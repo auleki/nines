@@ -11,7 +11,10 @@ const StoreFront = () => {
   return (
     <BasicPage bg={colors.lightBlack}>
       <StoreContainer>
-        <PageTitle>Stores</PageTitle>
+        <PageTitle>Storefront</PageTitle>
+        <main>
+          <div className='productCard'></div>
+        </main>
       </StoreContainer>
     </BasicPage>
   )
