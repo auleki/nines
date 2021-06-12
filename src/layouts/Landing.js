@@ -3,7 +3,9 @@ import {
   HeaderStyle,
   PageContainer,
   LandingContainer,
-  Title
+  Title,
+  Paragraph,
+  Button
 } from '../components/styledComponents'
 import WPLanding from '../assets/landing-bg.jpg'
 
@@ -12,7 +14,9 @@ const Landing = () => {
     <BasicPage>
       <LandingContainer full bgImage={WPLanding}>
         <HeaderStyle>
-          <Title>Landing Page</Title>
+          <Title>Get all the high you need </Title>
+          <Paragraph>We are your most efficient and reliable source</Paragraph>
+          <Button>Go Shopping</Button>
         </HeaderStyle>
       </LandingContainer>
     </BasicPage>

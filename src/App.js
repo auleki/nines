@@ -1,7 +1,7 @@
 import React from 'react'
 import PageRoutes from './components/PageRoutes'
-import Login from './layouts/Login'
 import Navbar from './layouts/Navbar'
+import { AppContainer } from './components/styledComponents'
 
 const App = () => {
   return (

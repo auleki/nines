@@ -1,4 +1,13 @@
-export const fonts = {}
+import * as AiIcon from 'react-icons/ai'
+
+export const fonts = {
+  concertOne: 'Concert One',
+  juliusSansOne: 'Julius Sans One',
+  sigmaOne: 'Sigma One',
+  spaceMono: 'Space Mono',
+  specialElite: 'Special Elite',
+  charmonman: 'Charmonman'
+}
 
 export const colors = {
   white: '#fff',
@@ -25,4 +34,10 @@ export const numerics = {
   bigFont: 2.4,
   mediumFont: 1.6,
   smallFont: 1.1
+}
+
+export const icons = {
+  search: AiIcon.AiOutlineSearch,
+  user: AiIcon.AiOutlineUser,
+  cart: AiIcon.AiOutlineShopping
 }

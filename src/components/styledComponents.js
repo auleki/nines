@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { numerics, colors } from './constants'
+import { numerics, colors, fonts } from './constants'
 
 export const BasicPage = styled.div(
   ({ size, color, centered, full, bg, bgImage }) => css`
@@ -13,6 +13,13 @@ export const BasicPage = styled.div(
     /* padding: 0 1em; */
   `
 )
+
+// export const AppContainer = styled.div(
+//   ({ color }) => css`
+//     height: 100vh;
+//     overflow-y: hidden;
+//   `
+// )
 
 export const HeaderStyle = styled.div(
   ({ height, bgImage }) => css`
@@ -37,7 +44,12 @@ export const LandingContainer = styled.div(
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    overflow-y: hidden;
   `
 )
 
@@ -45,6 +57,12 @@ export const Title = styled.h1(
   ({ size, color }) => css`
     color: ${colors.white};
     font-size: 1.3em;
+  `
+)
+
+export const Paragraph = styled.p(
+  ({ size }) => css`
+    color: ${colors.altWhite};
   `
 )
 
@@ -102,7 +120,7 @@ export const Button = styled.button(
     cursor: pointer;
     display: inline;
     color: ${textColor || colors.black};
-    border: ${numerics.border} solid transparent;
+    border: ${numerics.border}em solid transparent;
     transition: 250ms ease-in;
 
     &:hover,
@@ -127,13 +145,6 @@ export const TextLink = styled.a(
   `
 )
 
-export const NavlinkStyle = styled.a(
-  ({ color }) => css`
-    text-decoration: none;
-    color: ${colors.sparkGreen};
-  `
-)
-
 export const Row = styled.div(
   ({ column }) => css`
     display: flex;
@@ -141,13 +152,63 @@ export const Row = styled.div(
   `
 )
 
+export const NavlinkStyle = styled.a(
+  ({ color }) => css`
+    text-decoration: none;
+    color: ${colors.altWhite};
+    font-family: ${fonts.spaceMono};
+    cursor: pointer;
+    font-size: 0.2em;
+    &:hover {
+      color: ${colors.sparkGreen};
+    }
+  `
+)
+
 export const NavbarStyle = styled.nav(
   ({ size }) => css`
-    height: 100%;
+    height: 4em;
     width: 100%;
     display: flex;
+    position: absolute;
+    top: 0;
+    /* font-family: ${fonts.charmonman}; */
     justify-content: space-between;
+    color: ${colors.altWhite};
     padding: 1em;
-    background: ${colors.darkBrown};
+    background: ${colors.lightBlack};
+    font-size: 1em;
+
+    .logo {
+      h2 {
+        font-family: ${fonts.specialElite};
+        font-size: 2.2em;
+        letter-spacing: .2em;
+        color: ${colors.altWhite};
+      }
+      span {
+        /* margin-left: .2em; */
+        color: ${colors.sparkGreen};
+      }
+    }
+
+    .navlinks {
+      /* background: ${colors.basicGreen}; */
+      a {
+        padding: .5em;
+        font-size: 1.2em;
+        font-weight: 200;
+        /* color: ${colors.altWhite}; */
+      }
+    }
+
+    .userActions {
+      /* background: ${colors.white}; */
+      color: ${colors.midGreen};
+      display: flex;
+      gap: 1em;
+      padding: 0 .5em;
+      align-items: center;
+    }
   `
 )
