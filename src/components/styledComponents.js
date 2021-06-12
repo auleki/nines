@@ -23,8 +23,11 @@ export const BasicPage = styled.div(
 
 export const HeaderStyle = styled.div(
   ({ height, bgImage }) => css`
-    height: 40vh;
-    /* background: ${colors.black}; */
+    /* height: 40vh; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     color: ${colors.bkack};
     padding: 0 0.5em;
   `
@@ -54,15 +57,21 @@ export const LandingContainer = styled.div(
 )
 
 export const Title = styled.h1(
-  ({ size, color }) => css`
+  ({ size, color, font }) => css`
     color: ${colors.white};
-    font-size: 1.3em;
+    font-size: ${size || 'inherit'}em;
+    font-family: ${font || 'inherit'};
   `
 )
 
 export const Paragraph = styled.p(
-  ({ size }) => css`
-    color: ${colors.altWhite};
+  ({ size, font, color, bgColor, paddingX, paddingY }) => css`
+    color: ${color || colors.altWhite};
+    font-size: ${size || 'inherit'}em;
+    background: ${bgColor || 'inherit'};
+    padding: ${paddingY || 0}em ${paddingX || 0}em;
+    font-family: ${font || 'inherit'};
+    border-radius: 0.4em;
   `
 )
 
@@ -112,12 +121,13 @@ export const Form = styled.form(
 
 export const Button = styled.button(
   ({ textColor, size, bg }) => css`
-    background: ${bg || colors.brown};
+    background: ${bg || colors.lightBlack};
     padding: 1em 1.5em;
     font-size: 1em;
     font-weight: 400;
     letter-spacing: 0.05em;
     cursor: pointer;
+    font-family: ${fonts.spaceMono};
     display: inline;
     color: ${textColor || colors.black};
     border: ${numerics.border}em solid transparent;
@@ -125,9 +135,9 @@ export const Button = styled.button(
 
     &:hover,
     &:focus {
-      background: ${colors.lightBlack};
+      background: ${colors.brown};
       outline: 0;
-      color: ${colors.brown};
+      color: ${colors.black};
       border: ${numerics.border} solid turquoise;
     }
   `
@@ -156,9 +166,11 @@ export const NavlinkStyle = styled.a(
   ({ color }) => css`
     text-decoration: none;
     color: ${colors.altWhite};
-    font-family: ${fonts.spaceMono};
+    font-family: ${fonts.specialElite};
+    /* font-family: 'Helvetica'; */
+    font-weight: 800;
+    /* letter-spacing: 0.1em; */
     cursor: pointer;
-    font-size: 0.2em;
     &:hover {
       color: ${colors.sparkGreen};
     }
@@ -167,10 +179,11 @@ export const NavlinkStyle = styled.a(
 
 export const NavbarStyle = styled.nav(
   ({ size }) => css`
-    height: 4em;
+    height: 4.5em;
     width: 100%;
     display: flex;
     position: absolute;
+    align-items: center;
     top: 0;
     /* font-family: ${fonts.charmonman}; */
     justify-content: space-between;
@@ -180,9 +193,9 @@ export const NavbarStyle = styled.nav(
     font-size: 1em;
 
     .logo {
-      h2 {
-        font-family: ${fonts.specialElite};
-        font-size: 2.2em;
+    h2 {
+        font-family: ${fonts.charmonman};
+        font-size: 2em;
         letter-spacing: .2em;
         color: ${colors.altWhite};
       }
@@ -190,13 +203,16 @@ export const NavbarStyle = styled.nav(
         /* margin-left: .2em; */
         color: ${colors.sparkGreen};
       }
+      span:nth-child(2) {
+        font-size: 1.5em;
+      }
     }
 
     .navlinks {
       /* background: ${colors.basicGreen}; */
       a {
         padding: .5em;
-        font-size: 1.2em;
+        font-size: 1em;
         font-weight: 200;
         /* color: ${colors.altWhite}; */
       }

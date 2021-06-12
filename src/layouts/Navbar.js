@@ -11,6 +11,7 @@ const Navbar = () => {
       <div className='logo'>
         <h2>
           SKY<span>WAY</span>
+          <span>.</span>
         </h2>
       </div>
       <div className='navlinks'>

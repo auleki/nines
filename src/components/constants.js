@@ -3,7 +3,7 @@ import * as AiIcon from 'react-icons/ai'
 export const fonts = {
   concertOne: 'Concert One',
   juliusSansOne: 'Julius Sans One',
-  sigmaOne: 'Sigma One',
+  sigmarOne: 'Sigmar One',
   spaceMono: 'Space Mono',
   specialElite: 'Special Elite',
   charmonman: 'Charmonman'
