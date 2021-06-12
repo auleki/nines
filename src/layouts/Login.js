@@ -8,6 +8,7 @@ import {
   TextLink,
   Row
 } from '../components/styledComponents'
+import { colors } from '../components/constants'
 import { useInput } from '../hooks/useInput'
 
 const LoginForm = ({ setResetPassword }) => {
@@ -46,7 +47,7 @@ const LoginForm = ({ setResetPassword }) => {
           Forget password?
         </TextLink>
 
-        <TextLink onClick={() => setResetPassword(true)}>Register Now</TextLink>
+        <TextLink onClick={() => setResetPassword(true)}>Register now</TextLink>
       </Row>
     </Form>
   )
@@ -70,7 +71,7 @@ const PasswordResetForm = ({ setResetPassword }) => {
         <Button>Reset Password</Button>
       </div>
       <div className='inputGroup'>
-        <TextLink onClick={() => setResetPassword(false)}>Login Now</TextLink>
+        <TextLink onClick={() => setResetPassword(false)}>Login now</TextLink>
       </div>
     </Form>
   )
@@ -79,7 +80,7 @@ const PasswordResetForm = ({ setResetPassword }) => {
 const Login = () => {
   const [resetPassword, setResetPassword] = useState(false)
   return (
-    <BasicPage centered full>
+    <BasicPage centered full bg={colors.lightBlack}>
       <Box>
         <Title>Login Page</Title>
         {resetPassword ? (
