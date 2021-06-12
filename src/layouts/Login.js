@@ -104,7 +104,10 @@ const LoginForm = ({ setResetPassword, setToRegister }) => {
 }
 
 const PasswordResetForm = ({ setResetPassword }) => {
-  const { value: email, bind: bindEmail, reset: resetEmail } = useInput('')
+  // const { value: email, bind: bindEmail, reset: resetEmail } = useInput('')
+  const [email, setEmail] = useState('')
+
+  const handleEmail = e => setEmail(e.target.value)
 
   function passwordReset (e) {
     e.preventDefault()
@@ -115,7 +118,12 @@ const PasswordResetForm = ({ setResetPassword }) => {
     <Form marginTop={2.5} onSubmit={passwordReset}>
       <div className='inputGroup'>
         <label htmlFor='email'>email</label>
-        <input type='email' placeholder='jeremiah@example.com' />
+        <input
+          type='email'
+          onChange={handleEmail}
+          value={email}
+          placeholder='jeremiah@example.com'
+        />
       </div>
       <div className='inputGroup'>
         <Button>Reset Password</Button>

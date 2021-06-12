@@ -17,8 +17,8 @@ const Landing = () => {
       <LandingContainer full bgImage={WPLanding}>
         <HeaderStyle>
           <Title font={fonts.spaceMono} size={4}>
-            Get all the <SpanText color={colors.sparkGreen}>high</SpanText> you
-            need
+            <SpanText color={colors.sparkGreen}>Get all</SpanText> the high{' '}
+            <SpanText color={colors.sparkGreen}>you need</SpanText>
           </Title>
           <Paragraph
             size={1.5}

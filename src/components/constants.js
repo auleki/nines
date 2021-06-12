@@ -6,7 +6,8 @@ export const fonts = {
   sigmarOne: 'Sigmar One',
   spaceMono: 'Space Mono',
   specialElite: 'Special Elite',
-  charmonman: 'Charmonman'
+  charmonman: 'Charmonman',
+  hindSiliguri: 'Hind Siliguri'
 }
 
 export const colors = {

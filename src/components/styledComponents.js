@@ -47,8 +47,70 @@ export const PageContainer = styled.div(
 export const StoreContainer = styled.div(
   ({ size }) => css`
     padding: 6em 1em 0 1em;
+    color: ${colors.white};
     background: ${colors.black};
+    overflow-y: scroll;
     height: 100vh;
+  `
+)
+
+export const ProductContainer = styled.div(
+  ({ mobile }) => css`
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    column-gap: 1em;
+  `
+)
+
+export const ProductCardStyle = styled.div(
+  ({ bg, bgImage }) => css`
+    background: ${colors.basicGreen};
+    margin-top: 2em;
+    height: auto;
+    width: 100%;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    .image {
+      text-align: center;
+      height: 15em;
+      img {
+        height: auto;
+        width: 20em;
+      }
+    }
+
+    .info {
+      margin-bottom: 1em;
+
+      .name {
+        background: ${colors.black};
+        font-family: ${fonts.hindSiliguri};
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        padding: 0.1em 1em;
+        border-radius: 0.2em;
+        display: inline-flex;
+        margin-bottom: 0.5em;
+        font-size: ${numerics.smallFont}em;
+        color: ${colors.brown};
+      }
+
+      .price {
+        font-family: ${fonts.spaceMono};
+        font-size: ${numerics.mediumFont}em;
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 1.8em;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+    }
   `
 )
 
