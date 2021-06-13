@@ -21,6 +21,7 @@ const StoreFront = () => {
       image:
         'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
     },
+
     {
       name: 'Mary Fowler',
       price: 2000,
@@ -33,6 +34,24 @@ const StoreFront = () => {
     {
       name: 'Buhari Must Go',
       price: 5000,
+      inStock: true,
+      measurement: 'g',
+      type: 'Sativa',
+      image:
+        'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+    },
+    {
+      name: "Fela's Tears",
+      price: 4000,
+      inStock: true,
+      measurement: 'g',
+      type: 'Sativa',
+      image:
+        'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+    },
+    {
+      name: "Fela's Tears",
+      price: 4000,
       inStock: true,
       measurement: 'g',
       type: 'Sativa',
@@ -68,6 +87,9 @@ const StoreFront = () => {
     }
   ]
 
+  const herbIcon =
+    'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623536115/Trapping/marijuana_zvbpct.png'
+
   return (
     <BasicPage bg={colors.lightBlack}>
       <StoreContainer>
@@ -79,6 +101,7 @@ const StoreFront = () => {
                 <img src={product.image} alt={product.name} />
               </div>
               <div className='info'>
+                <img src={herbIcon} alt='name-icon' />
                 <h4 className='name'>{product.name}</h4>
                 <p className='price'>
                   <span>₦</span> {product.price}/{product.measurement}

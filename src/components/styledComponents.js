@@ -70,6 +70,7 @@ export const ProductCardStyle = styled.div(
     width: 100%;
     padding: 1em;
     border-radius: 0.5em;
+    transition: background 200ms ease-out;
 
     .image {
       text-align: center;
@@ -77,18 +78,29 @@ export const ProductCardStyle = styled.div(
       img {
         height: auto;
         width: 20em;
+        transition: transform 200ms ease-out;
       }
     }
 
     .info {
       margin-bottom: 1em;
+      position: relative;
+
+      img {
+        position: absolute;
+        height: 1.2em;
+        width: 1.2em;
+        top: 0.4em;
+        left: 0.5em;
+         
+      }
 
       .name {
         background: ${colors.black};
         font-family: ${fonts.hindSiliguri};
         font-weight: 300;
         letter-spacing: 0.1em;
-        padding: 0.1em 1em;
+        padding: 0.1em 2em;
         border-radius: 0.2em;
         display: inline-flex;
         margin-bottom: 0.5em;
@@ -99,6 +111,7 @@ export const ProductCardStyle = styled.div(
       .price {
         font-family: ${fonts.spaceMono};
         font-size: ${numerics.mediumFont}em;
+        transition: 200ms ease-out;
         display: flex;
         align-items: center;
         span {
@@ -110,6 +123,19 @@ export const ProductCardStyle = styled.div(
     .actions {
       display: flex;
       justify-content: space-between;
+    }
+
+    &:hover {
+      background: transparent;
+
+      .price {
+        color: ${colors.sparkGreen};
+      }
+
+      .image img {
+        transform: translateY(.4em);
+      }
+      /* background: ${colors.darkBrown}; */
     }
   `
 )
