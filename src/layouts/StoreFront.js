@@ -41,6 +41,24 @@ const StoreFront = () => {
         'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
     },
     {
+      name: 'Mary Fowler',
+      price: 2000,
+      inStock: true,
+      measurement: 'g',
+      type: 'Sativa',
+      image:
+        'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524846/Trapping/christina-winter-d_3Yc55MAr8-unsplash-removebg-preview_yfz177.png'
+    },
+    {
+      name: "Fela's Tears",
+      price: 4000,
+      inStock: true,
+      measurement: 'g',
+      type: 'Sativa',
+      image:
+        'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+    },
+    {
       name: "Fela's Tears",
       price: 4000,
       inStock: true,
@@ -84,6 +102,24 @@ const StoreFront = () => {
       type: 'Sativa',
       image:
         'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+    },
+    {
+      name: 'Buhari Must Go',
+      price: 5000,
+      inStock: true,
+      measurement: 'g',
+      type: 'Sativa',
+      image:
+        'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+    },
+    {
+      name: 'Mary Fowler',
+      price: 2000,
+      inStock: true,
+      measurement: 'g',
+      type: 'Sativa',
+      image:
+        'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524846/Trapping/christina-winter-d_3Yc55MAr8-unsplash-removebg-preview_yfz177.png'
     }
   ]
 

@@ -5,14 +5,65 @@ export const BasicPage = styled.div(
   ({ size, color, centered, full, bg, bgImage }) => css`
     height: ${full ? '100vh' : '100%'};
     font-family: 'Arial';
-    background: ${bg || 'transparent'};
+    background: ${colors.lightBlack};
+    /* background: ${bg || 'transparent'}; */
     background-image: url(bgImage);
+    padding-top: 3em;
     display: ${centered ? 'flex' : 'inherit'};
     justify-content: ${centered ? 'center' : 'inherit'};
     align-items: ${centered ? 'center' : 'inherit'};
     /* padding: 0 1em; */
   `
 )
+
+export const SplitPage = styled.div(
+  ({ size }) => css`
+    display: grid;
+    padding-top: 3em;
+    height: 100vh;
+    background: ${colors.lightBlack};
+    grid-template-columns: 20% 80%;
+  `
+)
+
+export const DashNav = styled.div(
+  ({ size }) => css`
+    width: 100%;
+    border-right: 1px solid ${colors.black};
+    /* background: ${colors.lightBlack}; */
+    color: ${colors.altWhite};
+    font-family: ${fonts.charmonman};
+    padding-top: 3em;
+
+    a {
+      /* background: ${colors.sparkGreen}; */
+      padding: 1em 1em;
+      display: flex;
+      color: ${colors.altWhite};
+      border-left: 2px solid transparent;
+      transition: padding-left 100ms ease-in;
+      font-size: 1.1em;
+      text-decoration: none;
+      text-align: center;
+
+      &:hover {
+        background: ${colors.black};
+        padding-left: 1.5em;
+        border-left: 2px solid ${colors.sparkGreen};
+      }
+
+      .active {
+        color: ${colors.sparkGreen};
+      }
+    }
+  `
+)
+
+// export const ProfilePage = styled.div(
+//   ({ size }) => css`
+//     background: ;
+//   `
+// )
 
 // export const AppContainer = styled.div(
 //   ({ color }) => css`
@@ -301,6 +352,7 @@ export const NavbarStyle = styled.nav(
     position: fixed;
     align-items: center;
     top: 0;
+    z-index: 500;
     /* font-family: ${fonts.charmonman}; */
     justify-content: space-between;
     color: ${colors.altWhite};
