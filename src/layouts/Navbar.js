@@ -25,9 +25,9 @@ const Navbar = () => {
         <Link to='/login'>
           <NavlinkStyle>Login/Register</NavlinkStyle>
         </Link>
-        <Link to='/profile'>
+        {/* <Link to='/profile'>
           <NavlinkStyle>Profile Page</NavlinkStyle>
-        </Link>
+        </Link> */}
       </div>
       <div className='userActions'>
         <p>CART</p>

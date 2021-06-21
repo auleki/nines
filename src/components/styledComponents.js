@@ -21,8 +21,9 @@ export const SplitPage = styled.div(
     display: grid;
     padding-top: 3em;
     height: 100vh;
+    overflow-y: hidden;
     background: ${colors.lightBlack};
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 15% 85%;
   `
 )
 
@@ -106,9 +107,9 @@ export const PageContainer = styled.div(
 
 export const StoreContainer = styled.div(
   ({ size }) => css`
-    padding: 6em 1em 0 1em;
+    padding: 1em 1em 0 1em;
     color: ${colors.white};
-    background: ${colors.black};
+    background: ${colors.lightBlack};
     overflow-y: scroll;
     height: 100vh;
   `
@@ -117,8 +118,9 @@ export const StoreContainer = styled.div(
 export const ProductContainer = styled.div(
   ({ mobile }) => css`
     display: grid;
-    grid-template-columns: repeat(4, 3fr);
+    grid-template-columns: repeat(3, 3fr);
     column-gap: 1em;
+    padding-bottom: 8em;
   `
 )
 
@@ -156,7 +158,7 @@ export const ProductCardStyle = styled.div(
       }
 
       .name {
-        background: ${colors.black};
+        background: ${colors.lightBlack};
         font-family: ${fonts.hindSiliguri};
         font-weight: 300;
         letter-spacing: 0.1em;
@@ -296,7 +298,7 @@ export const Form = styled.form(
 
 export const Button = styled.button(
   ({ textColor, size, bg }) => css`
-    background: ${bg || colors.lightBlack};
+    background: ${bg || colors.black};
     padding: 1em 1.5em;
     font-size: 1em;
     font-weight: 400;

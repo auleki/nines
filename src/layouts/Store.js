@@ -1,22 +1,23 @@
+import { Link as NavLink } from 'react-router-dom'
 import {
+  BasicPage,
   SplitPage,
   DashNav,
-  BasicPage,
   DashPage
 } from '../components/styledComponents'
+import { icons } from '../components/constants'
 import UserNavbar from '../components/UserNavbar'
-import StoreFront from '../layouts/StoreFront'
+import StoreFront from './StoreFront'
 
-const Favorites = () => {
+const Store = () => {
   return (
     <SplitPage>
       <UserNavbar />
       <DashPage>
-        {/* <h1>Favorites Page</h1> */}
         <StoreFront />
       </DashPage>
     </SplitPage>
   )
 }
 
-export default Favorites
+export default Store

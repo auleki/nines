@@ -5,18 +5,16 @@ import {
   DashPage
 } from '../components/styledComponents'
 import UserNavbar from '../components/UserNavbar'
-import StoreFront from '../layouts/StoreFront'
 
-const Favorites = () => {
+const Stat = () => {
   return (
     <SplitPage>
       <UserNavbar />
-      <DashPage>
-        {/* <h1>Favorites Page</h1> */}
-        <StoreFront />
-      </DashPage>
+      <BasicPage>
+        <h2>Stat Page</h2>
+      </BasicPage>
     </SplitPage>
   )
 }
 
-export default Favorites
+export default Stat

@@ -5,7 +5,7 @@ import { icons } from '../components/constants'
 const UserNavbar = () => {
   return (
     <DashNav>
-      <NavLink to='/profile' className='active'>
+      <NavLink to='/store' className='active'>
         <p>Storefront</p>
         <p>{icons.search}</p>
       </NavLink>

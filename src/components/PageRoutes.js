@@ -6,6 +6,10 @@ import NotFound from '../layouts/NotFound'
 import Navbar from '../layouts/Navbar'
 import UserProfile from '../layouts/UserProfile'
 import Settings from '../layouts/Settings'
+import Stat from '../layouts/Stat'
+import Orders from '../layouts/Orders'
+import Favorites from '../layouts/Favorites'
+import Store from '../layouts/Store'
 // import { AppContainer } from '../components/styledComponents'
 
 const PageRoutes = () => {
@@ -16,11 +20,11 @@ const PageRoutes = () => {
       <Switch>
         <Route exact path='/' component={Landing} />
         <Route path='/login' component={Login} />
-        <Route path='/store' component={StoreFront} />
+        <Route path='/store' component={Store} />
         <Route path='/profile' component={UserProfile} />
-        <Route path='/stats' component={UserProfile} />
-        <Route path='/orders' component={UserProfile} />
-        <Route path='/favorites' component={UserProfile} />
+        <Route path='/stats' component={Stat} />
+        <Route path='/orders' component={Orders} />
+        <Route path='/favorites' component={Favorites} />
         <Route path='/settings' component={Settings} />
         <Route component={NotFound} />
       </Switch>
