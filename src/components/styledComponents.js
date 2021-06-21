@@ -8,7 +8,7 @@ export const BasicPage = styled.div(
     background: ${colors.lightBlack};
     /* background: ${bg || 'transparent'}; */
     background-image: url(bgImage);
-    padding-top: 3em;
+    padding-top: 2em;
     display: ${centered ? 'flex' : 'inherit'};
     justify-content: ${centered ? 'center' : 'inherit'};
     align-items: ${centered ? 'center' : 'inherit'};
@@ -23,6 +23,15 @@ export const SplitPage = styled.div(
     height: 100vh;
     background: ${colors.lightBlack};
     grid-template-columns: 20% 80%;
+  `
+)
+
+export const DashPage = styled.div(
+  ({ size }) => css`
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
+    /* background:  */
   `
 )
 
