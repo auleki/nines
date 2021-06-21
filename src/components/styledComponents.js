@@ -5,14 +5,82 @@ export const BasicPage = styled.div(
   ({ size, color, centered, full, bg, bgImage }) => css`
     height: ${full ? '100vh' : '100%'};
     font-family: 'Arial';
-    background: ${bg || 'transparent'};
+    background: ${colors.lightBlack};
+    /* background: ${bg || 'transparent'}; */
     background-image: url(bgImage);
+    padding-top: 2em;
     display: ${centered ? 'flex' : 'inherit'};
     justify-content: ${centered ? 'center' : 'inherit'};
     align-items: ${centered ? 'center' : 'inherit'};
     /* padding: 0 1em; */
   `
 )
+
+export const SplitPage = styled.div(
+  ({ size }) => css`
+    display: grid;
+    padding-top: 3em;
+    height: 100vh;
+    overflow-y: hidden;
+    background: ${colors.lightBlack};
+    grid-template-columns: 15% 85%;
+  `
+)
+
+export const DashPage = styled.div(
+  ({ size }) => css`
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1em 8em 1em;
+    /* padding-top: 2em; */
+    /* background:  */
+  `
+)
+
+export const DashContainer = styled.div(
+  ({ size }) => css`
+    height: 100%;
+  `
+)
+
+export const DashNav = styled.div(
+  ({ size }) => css`
+    width: 100%;
+    border-right: 1px solid ${colors.black};
+    /* background: ${colors.lightBlack}; */
+    color: ${colors.altWhite};
+    font-family: ${fonts.charmonman};
+    padding-top: 3em;
+
+    a {
+      /* background: ${colors.sparkGreen}; */
+      padding: 1em 1em;
+      display: flex;
+      color: ${colors.altWhite};
+      border-left: 2px solid transparent;
+      transition: padding-left 100ms ease-in;
+      font-size: 1.1em;
+      text-decoration: none;
+      text-align: center;
+
+      &:hover {
+        background: ${colors.black};
+        padding-left: 1.5em;
+        border-left: 2px solid ${colors.sparkGreen};
+      }
+
+      .active {
+        color: ${colors.sparkGreen};
+      }
+    }
+  `
+)
+
+// export const ProfilePage = styled.div(
+//   ({ size }) => css`
+//     background: ;
+//   `
+// )
 
 // export const AppContainer = styled.div(
 //   ({ color }) => css`
@@ -46,9 +114,126 @@ export const PageContainer = styled.div(
 
 export const StoreContainer = styled.div(
   ({ size }) => css`
-    padding: 6em 1em 0 1em;
-    background: ${colors.black};
+    padding: 1em 1em 8em 1em;
+    color: ${colors.white};
+    background: ${colors.lightBlack};
+    overflow-y: scroll;
     height: 100vh;
+  `
+)
+
+export const ProductContainer = styled.div(
+  ({ mobile }) => css`
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    column-gap: 1em;
+    /* padding-bottom: 8em; */
+  `
+)
+
+export const OrderCards = styled.div(
+  ({ size }) => css`
+    width: 20em;
+    background: ${colors.sparkGreen};
+    padding: 1em;
+    margin-top: 1em;
+    font-family: 'Arial';
+    border-radius: 0.4em;
+
+    .customerInfo {
+      display: flex;
+      justify-content: space-between;
+
+      p:nth-child(2) {
+        text-transform: capitalize;
+      }
+    }
+  `
+)
+
+export const OrderContainer = styled.div(
+  ({ size }) => css`
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+  `
+)
+
+export const ProductCardStyle = styled.div(
+  ({ bg, bgImage }) => css`
+    background: ${colors.basicGreen};
+    margin-top: 2em;
+    height: auto;
+    width: 100%;
+    padding: 1em;
+    border-radius: 0.5em;
+    transition: background 200ms ease-out;
+
+    .image {
+      text-align: center;
+      height: 15em;
+      img {
+        height: auto;
+        width: 20em;
+        transition: transform 200ms ease-out;
+      }
+    }
+
+    .info {
+      margin-bottom: 1em;
+      position: relative;
+
+      img {
+        position: absolute;
+        height: 1.2em;
+        width: 1.2em;
+        top: 0.4em;
+        left: 0.5em;
+         
+      }
+
+      .name {
+        background: ${colors.lightBlack};
+        font-family: ${fonts.hindSiliguri};
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        padding: 0.1em 2em;
+        border-radius: 0.2em;
+        display: inline-flex;
+        margin-bottom: 0.5em;
+        font-size: ${numerics.smallFont}em;
+        color: ${colors.brown};
+      }
+
+      .price {
+        font-family: ${fonts.spaceMono};
+        font-size: ${numerics.mediumFont}em;
+        transition: 200ms ease-out;
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 1.8em;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &:hover {
+      background: transparent;
+
+      .price {
+        color: ${colors.sparkGreen};
+      }
+
+      .image img {
+        transform: translateY(.4em);
+      }
+      /* background: ${colors.darkBrown}; */
+    }
   `
 )
 
@@ -148,7 +333,7 @@ export const Form = styled.form(
 
 export const Button = styled.button(
   ({ textColor, size, bg }) => css`
-    background: ${bg || colors.lightBlack};
+    background: ${bg || colors.black};
     padding: 1em 1.5em;
     font-size: 1em;
     font-weight: 400;
@@ -213,6 +398,7 @@ export const NavbarStyle = styled.nav(
     position: fixed;
     align-items: center;
     top: 0;
+    z-index: 500;
     /* font-family: ${fonts.charmonman}; */
     justify-content: space-between;
     color: ${colors.altWhite};

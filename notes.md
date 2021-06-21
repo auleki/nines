@@ -7,10 +7,13 @@
 
 ## Landing Page 
 [] Find the UI 
+[] Make label a gray shade
 
 ## Store Front 
 [] Find UI 
 
-## Order Page 
+## Cart Page 
 [] Find Ui 
+
+## 
 
