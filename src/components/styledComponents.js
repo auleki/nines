@@ -31,8 +31,15 @@ export const DashPage = styled.div(
   ({ size }) => css`
     display: flex;
     flex-direction: column;
-    padding-top: 2em;
+    padding: 2em 1em 8em 1em;
+    /* padding-top: 2em; */
     /* background:  */
+  `
+)
+
+export const DashContainer = styled.div(
+  ({ size }) => css`
+    height: 100%;
   `
 )
 
@@ -107,7 +114,7 @@ export const PageContainer = styled.div(
 
 export const StoreContainer = styled.div(
   ({ size }) => css`
-    padding: 1em 1em 0 1em;
+    padding: 1em 1em 8em 1em;
     color: ${colors.white};
     background: ${colors.lightBlack};
     overflow-y: scroll;
@@ -120,7 +127,35 @@ export const ProductContainer = styled.div(
     display: grid;
     grid-template-columns: repeat(3, 3fr);
     column-gap: 1em;
-    padding-bottom: 8em;
+    /* padding-bottom: 8em; */
+  `
+)
+
+export const OrderCards = styled.div(
+  ({ size }) => css`
+    width: 20em;
+    background: ${colors.sparkGreen};
+    padding: 1em;
+    margin-top: 1em;
+    font-family: 'Arial';
+    border-radius: 0.4em;
+
+    .customerInfo {
+      display: flex;
+      justify-content: space-between;
+
+      p:nth-child(2) {
+        text-transform: capitalize;
+      }
+    }
+  `
+)
+
+export const OrderContainer = styled.div(
+  ({ size }) => css`
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
   `
 )
 
