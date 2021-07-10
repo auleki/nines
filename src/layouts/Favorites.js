@@ -13,7 +13,7 @@ const Favorites = () => {
       <UserNavbar />
       <DashPage>
         {/* <h1>Favorites Page</h1> */}
-        <StoreFront />
+        {/* <StoreFront /> */}
       </DashPage>
     </SplitPage>
   )

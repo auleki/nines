@@ -116,6 +116,91 @@ export const orders = [
     ],
     timeOfOrder: Date.now(),
     totalPrice: 40000,
+    orderStatus: 'delivered',
+    orderNumber: 'X101VH9KL0092',
+    buyer: {
+      firstName: 'Michael',
+      lastName: 'Davis',
+      username: 'mdavis',
+      state: 'lagos'
+    }
+  },
+  {
+    products: [
+      {
+        name: "Fela's Tears",
+        price: 4000,
+        inStock: true,
+        measurement: 'g',
+        quantity: 4,
+        type: 'Sativa',
+        image:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+      },
+      {
+        name: "Fela's Tears",
+        price: 4000,
+        inStock: true,
+        measurement: 'g',
+        quantity: 4,
+        type: 'Sativa',
+        image:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+      },
+      {
+        name: "Fela's Tears",
+        price: 4000,
+        inStock: true,
+        measurement: 'g',
+        quantity: 4,
+        type: 'Sativa',
+        image:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+      },
+      {
+        name: "Fela's Tears",
+        price: 4000,
+        inStock: true,
+        measurement: 'g',
+        quantity: 4,
+        type: 'Sativa',
+        image:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+      },
+      {
+        name: "Fela's Tears",
+        price: 4000,
+        inStock: true,
+        measurement: 'g',
+        quantity: 4,
+        type: 'Sativa',
+        image:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+      },
+      {
+        name: 'Buhari Must Go',
+        price: 5000,
+        inStock: true,
+        measurement: 'g',
+        quantity: 2,
+        type: 'Sativa',
+        image:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
+      },
+      {
+        name: 'Mary Fowler',
+        price: 2000,
+        inStock: true,
+        measurement: 'g',
+        quantity: 5,
+        type: 'Sativa',
+        image:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524846/Trapping/christina-winter-d_3Yc55MAr8-unsplash-removebg-preview_yfz177.png'
+      }
+    ],
+    timeOfOrder: Date.now(),
+    totalPrice: 40000,
+    orderStatus: 'pending',
     orderNumber: 'X101VH9KL0092',
     buyer: {
       firstName: 'Michael',
@@ -159,6 +244,7 @@ export const orders = [
     ],
     timeOfOrder: Date.now(),
     totalPrice: 40000,
+    orderStatus: 'enroute',
     orderNumber: 'X101VH9KL0092',
     buyer: {
       firstName: 'Michael',
@@ -202,49 +288,7 @@ export const orders = [
     ],
     timeOfOrder: Date.now(),
     totalPrice: 40000,
-    orderNumber: 'X101VH9KL0092',
-    buyer: {
-      firstName: 'Michael',
-      lastName: 'Davis',
-      username: 'mdavis',
-      state: 'lagos'
-    }
-  },
-  {
-    products: [
-      {
-        name: "Fela's Tears",
-        price: 4000,
-        inStock: true,
-        measurement: 'g',
-        quantity: 4,
-        type: 'Sativa',
-        image:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
-      },
-      {
-        name: 'Buhari Must Go',
-        price: 5000,
-        inStock: true,
-        measurement: 'g',
-        quantity: 2,
-        type: 'Sativa',
-        image:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524778/Trapping/jeff-w-5pph2vBrJTM-unsplash-removebg-preview_oyxftl.png'
-      },
-      {
-        name: 'Mary Fowler',
-        price: 2000,
-        inStock: true,
-        measurement: 'g',
-        quantity: 5,
-        type: 'Sativa',
-        image:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623524846/Trapping/christina-winter-d_3Yc55MAr8-unsplash-removebg-preview_yfz177.png'
-      }
-    ],
-    timeOfOrder: Date.now(),
-    totalPrice: 40000,
+    orderStatus: 'pending',
     orderNumber: 'X101VH9KL0092',
     buyer: {
       firstName: 'Michael',

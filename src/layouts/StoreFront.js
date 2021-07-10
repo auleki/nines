@@ -32,8 +32,13 @@ const StoreFront = () => {
               </p>
             </div>
             <div className='actions'>
-              <Button>Add to cart</Button>
-              <Button>Buy Now</Button>
+              <Button>
+                <i class='bx bxs-cart-add'></i>
+              </Button>
+              <Button>
+                <i class='bx bx-heart'></i>
+                {/* <i class='bx bxs-heart'></i> */}
+              </Button>
             </div>
           </ProductCardStyle>
         ))}

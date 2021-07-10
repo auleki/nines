@@ -60,6 +60,8 @@ export const DashNav = styled.div(
       border-left: 2px solid transparent;
       transition: padding-left 100ms ease-in;
       font-size: 1.1em;
+      align-items: center;
+      gap: .5em;
       text-decoration: none;
       text-align: center;
 
@@ -67,6 +69,10 @@ export const DashNav = styled.div(
         background: ${colors.black};
         padding-left: 1.5em;
         border-left: 2px solid ${colors.sparkGreen};
+
+        i {
+          transform: scale(1.5);
+        }
       }
 
       .active {
@@ -136,16 +142,41 @@ export const OrderCards = styled.div(
     width: 20em;
     background: ${colors.sparkGreen};
     padding: 1em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     margin-top: 1em;
     font-family: 'Arial';
     border-radius: 0.4em;
 
-    .customerInfo {
+    .orderInfo,
+    .customerInfo,
+    .orderStatus,
+    .itemsOrdered,
+    .orderDetails {
       display: flex;
       justify-content: space-between;
+    }
 
+    .orderActions {
+      display: flex;
+      justify-content: center;
+    }
+
+    .orderStatus,
+    .customerInfo {
       p:nth-child(2) {
         text-transform: capitalize;
+      }
+    }
+
+    .itemsOrdered {
+      .orders {
+        .orderItem {
+          display: flex;
+          justify-content: space-between;
+        }
       }
     }
   `
