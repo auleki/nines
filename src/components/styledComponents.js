@@ -284,6 +284,77 @@ export const LandingContainer = styled.div(
   `
 )
 
+export const CartItemStyle = styled.div(
+  ({ color }) => css`
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    .itemQuantity {
+      display: flex;
+      align-items: center;
+
+      .quantity {
+        padding: 1em;
+      }
+    }
+
+    .name,
+    .price,
+    .quantity {
+      font-weight: 600;
+    }
+
+    .deleteItem {
+      .deleteIcon {
+        cursor: pointer;
+        color: ${colors.red};
+        font-size: 1.5em;
+        transition: color 150ms ease-out;
+
+        &:hover {
+          color: ${colors.lightBlack};
+        }
+      }
+    }
+  `
+)
+
+export const CartStyle = styled.div(
+  ({ minimized }) => css`
+    position: fixed;
+    font-family: ${fonts.hindSiliguri};
+    background: ${colors.white};
+    color: ${colors.black};
+    right: 1em;
+    padding: 1em 1.5em;
+    max-height: 35em;
+    overflow-y: auto;
+    border-radius: ${numerics.border}em;
+    top: 5em;
+
+    ::-webkit-scrollbar {
+      width: 10px;
+      background: ${colors.brown};
+    }
+
+    /* not working */
+    ::-webkit-scrollbar-thumb {
+      width: 5px;
+      height: 1em;
+      background: ${colors.brown};
+    }
+
+    .title {
+      font-family: ${fonts.sigmarOne};
+    }
+
+    .cartContent {
+      /* display: ; */
+    }
+  `
+)
+
 export const Title = styled.h1(
   ({ size, color, font }) => css`
     color: ${colors.white};
@@ -362,6 +433,28 @@ export const Form = styled.form(
   `
 )
 
+export const SmallButton = styled.button(
+  ({ textColor, size, bg }) => css`
+    background: ${bg || colors.black};
+    padding: .8em;
+    /* font-size: .em; */
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    /* font-family: ${fonts.spaceMono}; */
+    display: inline;
+    color: ${textColor || colors.brown};
+    border-radius: ${numerics.border}em;
+    transition: 150ms ease-in;
+    
+    &:active {
+      background: ${colors.sparkGreen};
+      transform: scale(1.7);
+    }
+    
+  `
+)
+
 export const Button = styled.button(
   ({ textColor, size, bg }) => css`
     background: ${bg || colors.black};
@@ -374,15 +467,23 @@ export const Button = styled.button(
     display: inline;
     color: ${textColor || colors.brown};
     border-radius: ${numerics.border}em;
-    /* border: ${numerics.border}em solid transparent; */
     transition: 250ms ease-in;
+
+    i {
+      transition: transform 200ms ease-in-out;
+    }
 
     &:hover,
     &:focus {
       background: ${colors.brown};
       outline: 0;
       color: ${colors.black};
-      /* border: ${numerics.border} solid turquoise; */
+    }
+
+    &:active {
+      i {
+        transform: scale(2.3);
+      }
     }
   `
 )
@@ -471,6 +572,26 @@ export const NavbarStyle = styled.nav(
       gap: 1em;
       padding: 0 .5em;
       align-items: center;
+
+      i {
+        font-size: 1.5em;
+        transition: transform 200ms ease-in-out, 
+        color 300ms ease-in-out;
+        /* border-bottom: .1em solid transparent; */
+        border: transparent.15em solid ;
+        background: transparent;
+        padding: .4em;
+        border-radius: 50%;
+        color: ${colors.brown};
+        cursor: pointer;
+
+        &:hover {
+          color: ${colors.altWhite};
+          border-color: ${colors.brown};
+          background: ${colors.black};
+          transform: translateY(-.1em) scale(1.05);
+        }
+      }      
     }
   `
 )
