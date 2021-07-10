@@ -288,7 +288,8 @@ export const CartItemStyle = styled.div(
   ({ color }) => css`
     display: flex;
     align-items: center;
-    gap: 1em;
+    margin-bottom: 1em;
+    gap: 1.5em;
 
     .itemQuantity {
       display: flex;
@@ -334,15 +335,17 @@ export const CartStyle = styled.div(
     top: 5em;
 
     ::-webkit-scrollbar {
-      width: 10px;
+      width: 0.3em;
+      border-radius: 1.2em;
       background: ${colors.brown};
     }
 
     /* not working */
     ::-webkit-scrollbar-thumb {
-      width: 5px;
-      height: 1em;
-      background: ${colors.brown};
+      width: 0.2em;
+      height: 0.2em;
+      border-radius: 1.2em;
+      background: ${colors.lightBlack};
     }
 
     .title {
@@ -350,7 +353,9 @@ export const CartStyle = styled.div(
     }
 
     .cartContent {
-      /* display: ; */
+      display: flex;
+      flex-direction: column;
+      /* gap: 1em; */
     }
   `
 )
