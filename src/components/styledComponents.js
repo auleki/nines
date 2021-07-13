@@ -8,6 +8,7 @@ export const BasicPage = styled.div(
     background: ${colors.lightBlack};
     /* background: ${bg || 'transparent'}; */
     background-image: url(bgImage);
+    /* overflow-y: ${full ? 'hidden' : 'none'}; */
     padding-top: 2em;
     display: ${centered ? 'flex' : 'inherit'};
     justify-content: ${centered ? 'center' : 'inherit'};
@@ -102,7 +103,8 @@ export const HeaderStyle = styled.div(
     display: flex;
     flex-direction: column;
     gap: 1em;
-    color: ${colors.bkack};
+    overflow: hidden;
+    color: ${colors.black};
     padding: 0 0.5em;
 
     a {
@@ -125,15 +127,39 @@ export const StoreContainer = styled.div(
     background: ${colors.lightBlack};
     overflow-y: scroll;
     height: 100vh;
+
+    ::-webkit-scrollbar {
+      width: 0.3em;
+      background: ${colors.darkGreen};
+      border-radius: 10%;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      width: 0.3em;
+      background: ${colors.black};
+      height: 0.5em;
+      border-radius: 10%;
+    }
   `
 )
 
 export const ProductContainer = styled.div(
   ({ mobile }) => css`
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
+    grid-template-columns: repeat(4, 3fr);
     column-gap: 1em;
-    /* padding-bottom: 8em; */
+
+    @media (min-width: 720px) and (max-width: 1400px) {
+      grid-template-columns: repeat(3, 3fr);
+    }
+
+    @media (min-width: 720px) and (max-width: 1100px) {
+      grid-template-columns: repeat(2, 4fr);
+    }
+
+    @media (min-width: 315px) and (max-width: 730px) {
+      grid-template-columns: repeat(1, 2fr);
+    }
   `
 )
 
@@ -202,10 +228,10 @@ export const ProductCardStyle = styled.div(
 
     .image {
       text-align: center;
-      height: 15em;
+      height: 10em;
       img {
         height: auto;
-        width: 20em;
+        width: 15em;
         transition: transform 200ms ease-out;
       }
     }
@@ -270,7 +296,7 @@ export const ProductCardStyle = styled.div(
 
 export const LandingContainer = styled.div(
   ({ bgImage }) => css`
-    background-image: url('https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623490557/Trapping/daniel-norin-yVNBH4sPxEI-unsplash_mr3kzq.jpg');
+    background-image: url('https://res.cloudinary.com/dyj6pqx6d/image/upload/v1623489462/Trapping/kimzy-nanney-IWm_S2SRgwg-unsplash_ildzus.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -327,12 +353,12 @@ export const CartStyle = styled.div(
     font-family: ${fonts.hindSiliguri};
     background: ${colors.white};
     color: ${colors.black};
-    right: 1em;
+    right: 0em;
     padding: 1em 1.5em;
     max-height: 35em;
     overflow-y: auto;
-    border-radius: ${numerics.border}em;
-    top: 5em;
+    border-radius: 0 0 0 ${numerics.border}em;
+    top: 4.5em;
 
     ::-webkit-scrollbar {
       width: 0.3em;

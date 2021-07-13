@@ -7,14 +7,15 @@ import {
   Button,
   SpanText
 } from '../components/styledComponents'
-import WPLanding from '../assets/landing-bg.jpg'
+import WPLanding from '../assets/landing.jpg'
+import WPOne from '../assets/landing-1.jpg'
 import { fonts, colors } from '../components/constants'
 import { Link } from 'react-router-dom'
 
 const Landing = () => {
   return (
     <BasicPage>
-      <LandingContainer full bgImage={WPLanding}>
+      <LandingContainer full bgImage={WPOne}>
         <HeaderStyle>
           <Title font={fonts.spaceMono} size={4}>
             <SpanText color={colors.sparkGreen}>Get all</SpanText> the high{' '}
